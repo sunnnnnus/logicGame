@@ -1,0 +1,108 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+        background-color: #1e1e2f;
+        color: #f2f2f2;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header {
+        padding: 20px;
+        text-align: center;
+        background: #2b2b3d;
+        border-bottom: 2px solid #444;
+    }
+
+    header h1 {
+        font-size: 2em;
+        color: #f0a500;
+        letter-spacing: 2px;
+    }
+
+    main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+    }
+
+    #qBox {
+        margin-top: 20px;
+        background-color: #2a2a3d;
+        padding: 20px 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
+        max-width: 600px;
+        width: 90%;
+        display: none;
+    }
+
+    #qText {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        line-height: 1.5;
+        color: #ffffff;
+    }
+
+    ul#hintList {
+        margin: 10px 0;
+        padding-left: 20px;
+    }
+
+    #hintList li {
+        margin-bottom: 5px;
+        color: #aad8d3;
+    }
+
+    input#input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 6px;
+        margin: 10px 0;
+        background-color: #3a3a4d;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    button {
+        background: linear-gradient(145deg, #ffba08, #f48c06);
+        color: #1e1e2f;
+        padding: 10px 20px;
+        margin: 8px;
+        border: none;
+        border-radius: 6px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    button:hover {
+        background: linear-gradient(145deg, #f48c06, #faa307);
+    }
+
+    #response {
+        margin-top: 10px;
+        font-size: 1.1em;
+        color: #fcd5ce;
+        white-space: pre-wrap;
+    }
+
+    footer {
+        background: #2b2b3d;
+        color: #888;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9em;
+        border-top: 2px solid #444;
+    }
