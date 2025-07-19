@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `db_logicGame`.`answers` (
   PRIMARY KEY (`aId`),
   CONSTRAINT `qId`
     FOREIGN KEY (`qId`)
-    REFERENCES `db_logicGame`.`questions`
+    REFERENCES `db_logicGame`.`questions`(`qId`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
