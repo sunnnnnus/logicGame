@@ -9,7 +9,7 @@ const hintBtn = document.getElementById("hintBtn");
 startBtn.addEventListener("click", ()=>{
     startBtn.innerText="下一題";
     response.innerText = "";
-    fetch("http://localhost:3000/api/question")
+    fetch("/api/question")
       .then(res =>res.json())
       .then(({ data }) =>{
         currentId = data.qId;
@@ -50,7 +50,7 @@ btn.addEventListener("click", ()=>{
     response.innerText = "";
 
     //送猜測到後端
-    fetch("http://localhost:3000/api/guess", {
+    fetch("/api/guess", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -77,7 +77,7 @@ btn.addEventListener("click", ()=>{
 const showAnswerBtn = document.getElementById("showAnswerBtn");
 
 showAnswerBtn.addEventListener("click", () => {
-    fetch("http://localhost:3000/api/answer", {
+    fetch("/api/answer", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
