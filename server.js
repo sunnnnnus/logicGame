@@ -10,6 +10,7 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 // middleware
 app.use(cors()); // 允許跨網域訪問
 app.use(express.json()); // 解析JSON格式的請求
+app.use(express.static("public"));
 
 app.get('/test-db', (req, res) => {
   db.query('SELECT 1', (err, rows) => {
