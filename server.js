@@ -36,9 +36,6 @@ app.get("/api/question", (req, res)=>{
     });
 });
 
-app.listen(port , ()=>{
-    console.log(`server run on http://localhost:${port}/api/question`);
-});
 
 //拿答案API
 app.get("/answer/:id", (req,res)=>{
