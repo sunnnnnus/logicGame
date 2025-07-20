@@ -139,8 +139,6 @@ app.post("/api/answer", (req, res) => {
     });
 });
 
-
-
 app.listen(port, "0.0.0.0", () => {
   console.log(`🚀 伺服器已啟動：http://localhost:${port}`);
 });
