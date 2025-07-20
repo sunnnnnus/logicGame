@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const db = require('./db');
 const cors = require('cors');
-const port = 3000;
+const port = process.env.PORT || 3000;
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 
@@ -144,6 +144,6 @@ app.post("/api/answer", (req, res) => {
 
 
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log(`🚀 伺服器已啟動：http://localhost:${port}`);
 });
