@@ -9,11 +9,12 @@ const pool = mysql.createPool({
   database: process.env.DB_NAME
 });
 
-pool.connect(err => {
+pool.getConnection((err, connection) => {
   if (err) {
     console.error('連線失敗：', err);
   } else {
     console.log('連線成功！');
+    connection.release();
   }
 });
 
