@@ -46,9 +46,12 @@ logic-game/
 ## 🖼️ 畫面預覽
 
 
-![遊戲主畫面](<img width="600" height="480" alt="截圖 2025-07-21 上午3 25 28" src="https://github.com/user-attachments/assets/607e17ae-0c49-4657-8bf3-99cb4cb30a7f" />）
-![顯示題目](<img width="600" height="480" alt="截圖 2025-07-21 上午3 25 07" src="https://github.com/user-attachments/assets/fbe8d9c4-2a71-4a42-a01a-8d459f0ac084" />）
-
+[遊戲主畫面]<br/>
+<img width="600" height="480" alt="截圖 2025-07-21 上午3 25 28" src="https://github.com/user-attachments/assets/607e17ae-0c49-4657-8bf3-99cb4cb30a7f" />
+<br/>
+[顯示題目]<br/>
+<img width="600" height="480" alt="截圖 2025-07-21 上午3 25 07" src="https://github.com/user-attachments/assets/fbe8d9c4-2a71-4a42-a01a-8d459f0ac084" />
+<br/>
 
 
 目前尚未部署至線上平台，因此僅支援本地執行。
