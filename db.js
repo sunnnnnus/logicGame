@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 require('dotenv').config();
 
-const db = mysql.createConnection({
+const pool = mysql.createPool({
   host: process.env.DB_HOST,
   port: process.env.DB_PORT, // 加這行
   user: process.env.DB_USER,
@@ -9,7 +9,7 @@ const db = mysql.createConnection({
   database: process.env.DB_NAME
 });
 
-db.connect(err => {
+pool.connect(err => {
   if (err) {
     console.error('連線失敗：', err);
   } else {
@@ -17,4 +17,4 @@ db.connect(err => {
   }
 });
 
-module.exports = db;
+module.exports = pool;
