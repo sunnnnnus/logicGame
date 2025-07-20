@@ -44,15 +44,6 @@ logic-game/
 ---
 
 
-## 🖼️ 關聯表
-
-<img width="600" height="480" alt="截圖 2025-07-18 下午4 00 55" src="https://github.com/user-attachments/assets/e911f569-c79e-4132-8020-eb618bf94de4" />
-<br/>
-
-
----
-
-
 ## 🖼️ 畫面預覽
 
 
