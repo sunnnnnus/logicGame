@@ -1,8 +1,8 @@
 const db = require('./db');
 
-const sql = `
+const sqlStatements = [
 
-CREATE TABLE IF NOT EXISTS questions (
+`CREATE TABLE IF NOT EXISTS questions (
   qId INT NOT NULL AUTO_INCREMENT,
   content VARCHAR(255) NOT NULL,
   hint1 VARCHAR(255) NOT NULL,
@@ -10,18 +10,18 @@ CREATE TABLE IF NOT EXISTS questions (
   hint3 VARCHAR(255),
   answer VARCHAR(255) NOT NULL,
   PRIMARY KEY (qId)
-);
+);`,
 
-CREATE TABLE IF NOT EXISTS answers (
+`CREATE TABLE IF NOT EXISTS answers (
   aId INT NOT NULL AUTO_INCREMENT,
   qId INT NOT NULL,
   input VARCHAR(255) NOT NULL,
   isCorrect TINYINT,
   PRIMARY KEY (aId),
   FOREIGN KEY (qId) REFERENCES questions(qId)
-);
+);`,
 
-INSERT INTO questions (content, hint1, hint2, hint3, answer) VALUES
+`INSERT INTO questions (content, hint1, hint2, hint3, answer) VALUES
 ('一名男子走進一家餐廳，點了一碗海龜湯。喝了一口後，他立刻結帳離開，回家自殺了。為什麼？',
  '他以前喝過海龜湯。','這次味道不一樣。','他發現自己過去被騙了。','他在荒島上吃的是人肉，這次才發現味道不同，崩潰自殺。'),
 
@@ -75,15 +75,25 @@ INSERT INTO questions (content, hint1, hint2, hint3, answer) VALUES
  "這與交通工具有關","曾經有某種裝置","與飛機相關","他是從空中跳傘失敗墜地的"),
 
 ("一個小女孩總是說：“我姐姐總是在晚上唱歌給我聽。” 但她的姐姐早已去世。為什麼？",
- "與聲音有關","小女孩不是在說謊","與空間安排有關","姐姐的錄音留存在音樂盒中，每晚自動播放");
+ "與聲音有關","小女孩不是在說謊","與空間安排有關","姐姐的錄音留存在音樂盒中，每晚自動播放");`
 
-`;
+];
 
-db.query(sql, (err, result) => {
-  if (err) {
-    console.error('匯入失敗！', err);
-  } else {
-    console.log('匯入成功！');
+function executeSQLs(sqlList, index = 0) {
+  if (index >= sqlList.length) {
+    console.log("✅ 所有 SQL 執行完成！");
+    db.end();
+    return;
   }
-  db.end();
-});
+  console.log(`執行第 ${index + 1} 條 SQL...`);
+  db.query(sqlList[index], (err, result) => {
+    if (err) {
+      console.error(`第 ${index + 1} 條 SQL 執行錯誤：`, err.sqlMessage);
+      db.end();
+    } else {
+      executeSQLs(sqlList, index + 1);
+    }
+  });
+}
+
+executeSQLs(sqlStatements);
