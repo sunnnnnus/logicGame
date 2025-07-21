@@ -40,6 +40,15 @@ const db = mysql.createPool({
   queueLimit: 0
 });
 
+db.getConnection((err, connection) => {
+  if (err) {
+     console.error('連線失敗：', err);
+   } else {
+     console.log('連線成功！');
+     connection.release();
+   }
+ });
+ 
 module.exports = db;
 // const connection = mysql.createConnection({
 //   host: process.env.MYSQL_ADDON_HOST,
@@ -49,12 +58,12 @@ module.exports = db;
 //   port: 3306
 // });
 
-connection.connect((err) => {
-  if (err) {
-    console.error('連線失敗：', err);
-    return;
-  }
-  console.log('成功連線');
-});
+// connection.connect((err) => {
+//   if (err) {
+//     console.error('連線失敗：', err);
+//     return;
+//   }
+//   console.log('成功連線');
+// });
 
 //module.exports = connection;
