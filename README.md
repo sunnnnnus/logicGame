@@ -1,4 +1,4 @@
-# 🐢 海龜湯邏輯猜謎遊戲（Black Stories Logic Game）
+# 🐢 來碗海龜湯（Black Stories Logic Game）
 
 這是一個互動式的邏輯猜謎遊戲平台，玩家可根據題目提示進行提問與猜測，系統會結合 AI 回應進行判斷，讓遊戲更具互動性與智慧性。
 
