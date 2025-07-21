@@ -6,6 +6,14 @@
 
 ---
 
+🌐 線上 Demo
+
+👉 點我立即體驗 Lunch App(https://logicgame.onrender.com)
+
+（建議用桌機或手機瀏覽器開啟）
+
+---
+
 ## 🚀 專案特色
 
 - 題庫儲存在 MySQL 資料庫，包含題幹、解答與敘述提示
@@ -77,12 +85,10 @@ logic-game/<br/>
 <img width="600" height="480" alt="截圖 2025-07-21 上午3 25 07" src="https://github.com/user-attachments/assets/fbe8d9c4-2a71-4a42-a01a-8d459f0ac084" />
 <br/>
 
-
-目前尚未部署至線上平台，因此僅支援本地執行。
-未來可考慮搭配 Render / Vercel / PlanetScale 等平台進行完整部署。
+---
 
 🙋‍♀️ 開發者
 
-唯瑄
+Jamie
 GitHub｜正在努力轉職成為全端工程師 🧑‍💻
 歡迎交流與指教！
