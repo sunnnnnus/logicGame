@@ -29,13 +29,25 @@ const mysql = require('mysql2');
 
 // module.exports = db;
 
-const connection = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.MYSQL_ADDON_HOST,
   user: process.env.MYSQL_ADDON_USER,
   password: process.env.MYSQL_ADDON_PASSWORD,
   database: process.env.MYSQL_ADDON_DB,
-  port: 3306
+  port: 3306,
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0
 });
+
+module.exports = db;
+// const connection = mysql.createConnection({
+//   host: process.env.MYSQL_ADDON_HOST,
+//   user: process.env.MYSQL_ADDON_USER,
+//   password: process.env.MYSQL_ADDON_PASSWORD,
+//   database: process.env.MYSQL_ADDON_DB,
+//   port: 3306
+// });
 
 connection.connect((err) => {
   if (err) {
@@ -45,4 +57,4 @@ connection.connect((err) => {
   console.log('成功連線');
 });
 
-module.exports = connection;
+//module.exports = connection;
