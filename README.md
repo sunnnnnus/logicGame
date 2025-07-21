@@ -8,7 +8,7 @@
 
 ## 🌐 線上 Demo
 
-👉 [點我立即體驗 Logic Game](https://logicgame.onrender.com)
+👉 [點我立即體驗 Logic Game]([https://logicgame.onrender.com)
 
 （建議用桌機或手機瀏覽器開啟）
 
