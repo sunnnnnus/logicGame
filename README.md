@@ -1,8 +1,16 @@
-# 🐢 海龜湯邏輯猜謎遊戲（Logic Guessing Game）
+# 🐢 海龜湯邏輯猜謎遊戲（Black Stories Logic Game）
 
 這是一個互動式的邏輯猜謎遊戲平台，玩家可根據題目提示進行提問與猜測，系統會結合 AI 回應進行判斷，讓遊戲更具互動性與智慧性。
 
 本專案採用 Node.js 開發後端，搭配 MySQL 作為資料庫，前端使用原生 JavaScript 串接 API，實現即時互動功能，並整合 Gemini API 進行邏輯答案判斷。
+
+---
+
+## 🌐 線上 Demo
+
+👉 [點我立即體驗 Logic Game](https://logicgame.onrender.com)
+
+（建議用桌機或手機瀏覽器開啟）
 
 ---
 
@@ -77,12 +85,10 @@ logic-game/<br/>
 <img width="600" height="480" alt="截圖 2025-07-21 上午3 25 07" src="https://github.com/user-attachments/assets/fbe8d9c4-2a71-4a42-a01a-8d459f0ac084" />
 <br/>
 
+---
 
-目前尚未部署至線上平台，因此僅支援本地執行。
-未來可考慮搭配 Render / Vercel / PlanetScale 等平台進行完整部署。
+*本網站為個人作品展示用，所使用之海龜湯題目皆為改寫自網路常見題型，無意侵權。若有侵權疑慮，請聯絡我下架*
 
 🙋‍♀️ 開發者
-
-唯瑄
-GitHub｜正在努力轉職成為全端工程師 🧑‍💻
+Jamie | 正在努力轉職成為全端工程師 🧑‍💻
 歡迎交流與指教！
