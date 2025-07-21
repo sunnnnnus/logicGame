@@ -15,7 +15,7 @@ app.use(express.static("public"));
 app.get('/test-db', (req, res) => {
   db.query('SELECT 1', (err, rows) => {
     if (err) {
-      // 當資料庫有錯誤時，回傳 500 錯誤
+    // 當資料庫有錯誤時，回傳 500 錯誤
       return res.status(500).json({ success: false, error: err.message });
     }
     // 如果查詢成功，回傳 success true
