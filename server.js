@@ -82,12 +82,8 @@ app.post("/api/guess", (req, res) => {
                             text: `猜測：「${guess}」
                             正確答案是：「${correct}」
 
-                            請判斷使用者的猜測是否正確，或接近正確。
-                            只回覆：
-                            - 正確
-                            - 接近
-                            - 不相關
-                            不要加其他文字。`
+                            請判斷這個猜測是否正確或接近正確，並簡短地用自然語氣回應。你可以鼓勵使用者、指出錯誤或提示方向。
+                            回答不要太長，最多兩句話即可。`
                         }
                     ]
                 }
@@ -103,20 +99,21 @@ app.post("/api/guess", (req, res) => {
         })
             .then(response => response.json())
             .then(json => {
-                //console.log("🔥 Gemini 原始回應：", JSON.stringify(json, null, 2));
 
                 const aiReply = json?.candidates?.[0]?.content?.parts?.[0]?.text.trim() || "";
-                console.log("Gemini 回應：", aiReply);
 
-                if (aiReply === "正確") {
-                res.json({ success: true, result: `✅ 恭喜你答對了！答案是：「${correct}」` });
-                } else if (aiReply === "接近") {
-                    res.json({ success: true, result: "🧐 你猜得滿接近的喔～" });
-                } else if (aiReply === "不相關") {
-                    res.json({ success: true, result: "❌ 無關！再想一下～" });
-                } else {
-                    res.json({ success: true, result: "🤖 AI 沒說清楚，再猜一次吧！" });
-                }
+                res.json({ success: true, result: `🖥️：${aiReply}` });
+                //console.log("Gemini 回應：", aiReply);
+
+                // if (aiReply === "正確") {
+                // res.json({ success: true, result: `✅ 恭喜你答對了！答案是：「${correct}」` });
+                // } else if (aiReply === "接近") {
+                //     res.json({ success: true, result: "🧐 你猜得滿接近的喔～" });
+                // } else if (aiReply === "不相關") {
+                //     res.json({ success: true, result: "❌ 無關！再想一下～" });
+                // } else {
+                //     res.json({ success: true, result: "🤖 AI 沒說清楚，再猜一次吧！" });
+                // }
             })
             .catch(err => {
                 console.error("Gemini API 錯誤：", err);
